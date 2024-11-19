@@ -1,6 +1,5 @@
 using AndyJavier_AP1_P2.Components;
 using AndyJavier_AP1_P2.DAL;
-using AndyJavier_AP1_P2.Models;
 using AndyJavier_AP1_P2.Service;
 using Microsoft.EntityFrameworkCore;
 
@@ -12,10 +11,8 @@ builder.Services.AddRazorComponents()
 
 var ConStr = builder.Configuration.GetConnectionString("SqlConStr");
 builder.Services.AddDbContextFactory<Contexto>(o => o.UseSqlServer(ConStr));
-
-builder.Services.AddScoped<RegistroServices>();
-
-
+builder.Services.AddScoped<ComboService>();
+builder.Services.AddScoped<ArticulosService>();
 builder.Services.AddBlazorBootstrap();
 
 var app = builder.Build();
