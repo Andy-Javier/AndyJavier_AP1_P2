@@ -10,4 +10,5 @@ public class Contexto : DbContext
 
     public DbSet<Combos> combos { get; set; }
     public DbSet<Articulos> articulos { get; set; }
+    public DbSet<CombosDetalle> combosDetalles { get; set; }
 }
